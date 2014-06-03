@@ -1,0 +1,9 @@
+time
+total mappers
+total reducers
+mean processing rate
+total data size to be (outputsize*2)
+outputsize= HDFS_BYTES_READ
+
+
+17:22:51

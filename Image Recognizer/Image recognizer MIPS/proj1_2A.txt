@@ -1,0 +1,11 @@
+Partner 1 name: Anthony Sun
+Partner 1 login: cs61c-dt
+
+CS61C Spring 2014 Project 1-2 Task A Writeup
+
+1. Which version (iterative or recursive) executed more instructions, and why? Please answer in 1-2 sentences.
+Both functions were started with n=100, and the recursive function (488 total, R:159, I:302, J:27) executed approximately one third more instructions than the iterative function (363 total, R:134, I:227, J:2), as the iterative function does not have to manage the stack pointer.
+
+
+
+

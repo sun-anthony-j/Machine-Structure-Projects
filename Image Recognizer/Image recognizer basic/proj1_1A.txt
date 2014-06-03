@@ -1,0 +1,21 @@
+Partner 1 name: Anthony Sun
+Partner 1 login: cs61c-dt
+
+CS61C Spring 2014 Project 1 Task A Writeup
+
+1. For each of the test image provided in advanced_tests/, which images are not recognized correctly?
+
+sans_serif_5.bmp, serif_8.bmp, and serif_5.bmp are not recognized correctly.
+
+
+2. For each test image listed in the previous question, What is the difference in "digit distances" between the recognized digit and the digit it is supposed to be (e.g. if a digit 3 is recognized as 8, and 3 has a "digit distance" of 10 while 8 has a "digit distance" of 20, then difference in distances is 20 - 10 = 10).
+
+The digit differences for the above files are 8969982, 6116396, and 9216499, respectively.
+
+
+
+
+
+3. Give a one to two sentence explanation on why you think the images mentioned above are recognized incorrectly.
+
+The method we used to recognize digits is not well equipped to deal with different fonts.

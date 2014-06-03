@@ -1,0 +1,33 @@
+PROJECT 4 WRITE-UP
+------------------
+
+1) Briefly explain how you implemented comparison queries and how they affected your control block's signals (in a few sentences).
+
+ANSWER
+The CR register consists of 2 bits. The most significant bit represents a greater than (0b10), the least significant bit represents equal to (0b01). A less than result is represented by 0b00. The ?CQ bits are used as control bits for a mux that selects from the appropriate logic that processes the output from the CR register.
+
+2) Please list your control block's control signals, and briefly explain what each one does (in a sentence or less each).
+
+ANSWER
+op=14- if 1, will override default write reg (%RD) and writeval (ALUout) to %ra and RI
+type- represents the instructions A1(0)/A2(1)/A3(2) type; used to select proper RI bit length and trigger the proper comparison datapath
+write?- control bit that allows register writing
+memRead?- control bit that causes memory to be loaded into a register when 1
+memWrite?- control bit that causes memory to be written to when 1
+write reg- final write register target
+
+
+
+3) What features (if any) of this assembly language do you like?
+
+ANSWER
+It makes efficient use of instruction bits.
+Immediate operations having the same opcode is convenient.
+
+
+4) What features (if any) of this assembly language do you not like?
+
+ANSWER
+
+Comparison query on any instruction seems redundant. I think it would be possible to only have comparison queries on jump instructions.
+

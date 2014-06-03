@@ -1,0 +1,46 @@
+        COPY %a0 0    # pointer to the 1st element
+        COPY %a1 42 # number of elements to sort
+        CALL @SORT  
+        HALT
+        
+SORT:                 # sort starts here
+#swapped=false
+add %t1 %zero %zero
+
+#for int i=1; i<n;i++
+#i=1
+add %t0 %zero 1
+
+
+FOR:
+
+#if a[i-1]>a[i]
+
+sub %t2 %t0 1
+load %t4 %a0 %t0
+load %t5 %a0 %t2
+cmps %t5 %t4
+#swap a[i-1], a[i]
+save ?GT %t5 %a0 %t0
+save ?GT %t4 %a0 %t2
+#swapped = true
+add ?GT %t1 %zero 1
+
+#i++
+add %t0 %t0 1
+
+#i<n
+cmps %t0 %a1
+jump ?LT @for
+
+cmps %t1 %zero
+jump ?NE @sort
+jump %ra
+
+#a0= ptr
+#a1= 
+#t0= i
+#t1 = swapped
+#t2 = i-1
+#t4 = a[i]
+#t5 =a[i-1]
